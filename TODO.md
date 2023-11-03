@@ -7,12 +7,12 @@
     - Majority JS (Node)
 
 ### Unfinished things:
--- Parser for Mines Market Data (Definitely in JavaScript or Python)
--- Get working times available 
+- Parser for Mines Market Data (Definitely in JavaScript or Python)
+- Get working times available 
 
--- ADVANCED THINGS BELOW
+- ADVANCED THINGS BELOW
 
--- Start working on simple website for the Mines Market data
--- Start rating system
+- Start working on simple website for the Mines Market data
+- Start rating system
 
 thanks friends :3
