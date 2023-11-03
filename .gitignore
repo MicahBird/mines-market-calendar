@@ -1,2 +1,4 @@
 env/
 node_modules/
+# dinner.json will update no matter what, so we don't want to commit it *just* yet
+dinner.json
