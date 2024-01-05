@@ -40,10 +40,7 @@ jobs:
       run: node index.js
     
     - name: Test that menu was created
-      run: cat menu.ics
-    
-    - name: Test that menu was created
-      run: cat ./menu.ics
+      run: ls -lah && cat menu.ics
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
