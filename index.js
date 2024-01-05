@@ -3,7 +3,7 @@ const ics = require('ics')
 const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({"headless": "new"});
   const page = await browser.newPage();
   const url = 'https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14978&locationId=75204001&whereami=http://minesdining.sodexomyway.com/menu';
 
