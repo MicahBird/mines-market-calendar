@@ -38,14 +38,11 @@ jobs:
 
     - name: Create Menu
       run: node index.js
-    
-    - name: Test that menu was created
-      run: ls -lah && cat menu.ics
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: 'menu.ics'
+        path: 'menu.ical'
 
     - name: Deploy to GitHub Pages
       id: deployment
