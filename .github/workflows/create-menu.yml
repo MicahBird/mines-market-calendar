@@ -42,8 +42,8 @@ jobs:
     - name: Create folder for deployment
       run: mkdir -p public
 
-    - name: Move menu.ics to folder for deployment
-      run: mv menu.ics ./public
+    - name: Move *.ics to folder for deployment
+      run: mv *.ics ./public
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
