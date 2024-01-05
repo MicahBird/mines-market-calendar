@@ -29,6 +29,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Convert IMAGE_NAME to lowercase
+      run: echo IMAGE_NAME=$(echo $IMAGE_NAME | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
+
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
