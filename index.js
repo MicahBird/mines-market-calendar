@@ -102,5 +102,5 @@ const fs = require('fs');
   browser.close();
 
   // Write the calendar data to a .ics file
-  fs.writeFileSync('menu.ical', value);
+  fs.writeFileSync('menu.ics', value);
 })();

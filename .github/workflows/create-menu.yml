@@ -38,11 +38,17 @@ jobs:
 
     - name: Create Menu
       run: node index.js
+    
+    - name: Create folder for deployment
+      run: mkdir -p public
+
+    - name: Move menu.ics to folder for deployment
+      run: mv menu.ics ./public
         
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: 'menu.ical'
+        path: 'menu.ics'
 
     - name: Deploy to GitHub Pages
       id: deployment
