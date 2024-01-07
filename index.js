@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer');
-const ics = require('ics')
+const ics = require('ics');
+const moment = require('moment-timezone');
 const fs = require('fs');
 
 (async () => {
-  const browser = await puppeteer.launch({"headless": "new"});
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const url = 'https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14978&locationId=75204001&whereami=http://minesdining.sodexomyway.com/menu';
 
@@ -43,10 +44,10 @@ const fs = require('fs');
       let dayPart = menu[i].dayParts[j];
 
       // Parse the start and end times to the format required by the ics library
-      let startTime = new Date(dayPart.courses[0].menuItems[0].startTime);
-      let endTime = new Date(dayPart.courses[0].menuItems[0].endTime);
-      let start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), startTime.getHours(), startTime.getMinutes()];
-      let end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), endTime.getHours(), endTime.getMinutes()];
+      let startTime = moment.tz(dayPart.courses[0].menuItems[0].startTime, "America/Denver");
+      let endTime = moment.tz(dayPart.courses[0].menuItems[0].endTime, "America/Denver");
+      let start = [startTime.year(), startTime.month() + 1, startTime.date(), startTime.hour(), startTime.minute()];
+      let end = [endTime.year(), endTime.month() + 1, endTime.date(), endTime.hour(), endTime.minute()];
 
       // Set the title of the event to "[MEAL] -"
       let title = `[${dayPart.dayPartName}] -`;
@@ -102,5 +103,5 @@ const fs = require('fs');
   browser.close();
 
   // Write the calendar data to a .ics file
-  fs.writeFileSync('menu.ics', value);
+  fs.writeFileSync('menu.ical', value);
 })();
