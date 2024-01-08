@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "ics": "^3.5.0",
-    "moment-timezone": "^0.5.44",
     "puppeteer": "^21.5.0"
   }
 }
