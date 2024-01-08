@@ -50,20 +50,20 @@ const fs = require('fs');
 
         switch (dayPart.dayPartName) {
           case "BRUNCH":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 9, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 12, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 16, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 19, 0];
             break;
           case "LUNCH":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 12, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 13, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 19, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 20, 0];
             break;
           case "DINNER":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 17, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 18, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 0, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 1, 0];
             break;
           case "BREAKFAST":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 7, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 8, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 14, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 15, 0];
             break;
           default:
             console.log("Unknown day part");
