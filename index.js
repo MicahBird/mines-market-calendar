@@ -46,8 +46,29 @@ const fs = require('fs');
       if (!excludedCourses.includes(dayPart.dayPartName)) {
         let startTime = new Date(dayPart.courses[0].menuItems[0].startTime);
         let endTime = new Date(dayPart.courses[0].menuItems[0].endTime);
-        let start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), startTime.getHours(), startTime.getMinutes()];
-        let end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), endTime.getHours(), endTime.getMinutes()];
+        let start, end;
+
+        switch (dayPart.dayPartName) {
+          case "BRUNCH":
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 9, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 12, 0];
+            break;
+          case "LUNCH":
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 12, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 13, 0];
+            break;
+          case "DINNER":
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 17, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 18, 0];
+            break;
+          case "BREAKFAST":
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 7, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 8, 0];
+            break;
+          default:
+            console.log("Unknown day part");
+            break;
+        }
 
         // Set the title of the event to "[MEAL] -"
         let title = `[${dayPart.dayPartName}] -`;
