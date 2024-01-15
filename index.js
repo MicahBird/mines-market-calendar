@@ -24,6 +24,7 @@ const fs = require('fs');
     'Patty',
     'Steak',
     'Quesadilla',
+    'Cheeseburger',
     'Toast',
     'Eggs',
     'Fish',
