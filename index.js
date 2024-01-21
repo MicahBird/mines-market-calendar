@@ -27,6 +27,7 @@ const fs = require('fs');
     'Cheeseburger',
     'Toast',
     'Eggs',
+    'Lo Mein',
     'Fish',
   ]
   
