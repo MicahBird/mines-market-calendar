@@ -39,7 +39,7 @@ const fs = require('fs');
   // Convert JSON string to JSON object
   const menu = JSON.parse(ndValueJSON);
   
-  // // Save output to a file
+  // Save output to a file
   // fs.writeFileSync('menu.json', ndValueJSON);
   
   // Iterate through menu and create events
@@ -64,10 +64,10 @@ const fs = require('fs');
             break;
           case "DINNER":
             startTime.setDate(startTime.getDate() + 1); // Add one day to the start time
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 17, 0]; // 5PM
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 0, 0]; // 5PM
 
             endTime.setDate(endTime.getDate() + 1); // Add one day to the end time
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 18, 0]; // 6PM
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 1, 0]; // 6PM
             break;
           case "BREAKFAST":
             start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 14, 0];
