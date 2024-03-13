@@ -64,10 +64,10 @@ const fs = require('fs');
             break;
           case "DINNER":
             startTime.setDate(startTime.getDate() + 1); // Add one day to the start time
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 24, 0]; // 5PM
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 0, 0]; // 5PM
 
             endTime.setDate(endTime.getDate() + 1); // Add one day to the end time
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 0, 0]; // 6PM
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 1, 0]; // 6PM
             break;
           case "BREAKFAST":
             start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 13, 0];
