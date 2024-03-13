@@ -55,23 +55,23 @@ const fs = require('fs');
 
         switch (dayPart.dayPartName) {
           case "BRUNCH":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 16, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 19, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 15, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 18, 0];
             break;
           case "LUNCH":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 19, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 20, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 18, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 19, 0];
             break;
           case "DINNER":
             startTime.setDate(startTime.getDate() + 1); // Add one day to the start time
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 0, 0]; // 5PM
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 24, 0]; // 5PM
 
             endTime.setDate(endTime.getDate() + 1); // Add one day to the end time
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 1, 0]; // 6PM
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 0, 0]; // 6PM
             break;
           case "BREAKFAST":
-            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 14, 0];
-            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 15, 0];
+            start = [startTime.getFullYear(), startTime.getMonth() + 1, startTime.getDate(), 13, 0];
+            end = [endTime.getFullYear(), endTime.getMonth() + 1, endTime.getDate(), 14, 0];
             break;
           default:
             console.log("Unknown day part");
