@@ -29,6 +29,7 @@ const fs = require('fs');
     'Eggs',
     'Lo Mein',
     'Fish',
+    'Sloppy Joe Sandwich',
   ]
   
   let excludedCourses = ['-', 'MISCELLANEOUS', 'AFTERNOON SNACK', 'LATE NIGHT']; // Add more course names to exclude
